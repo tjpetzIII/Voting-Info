@@ -1,4 +1,3 @@
-
 import { Nav, NavLink, NavMenu } from "./NavbarElements";
 
 const Navbar = () => {
@@ -6,18 +5,10 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/about" activeStyle>
-            About
-          </NavLink>
-          <NavLink to="/contact" activeStyle>
-            Contact Us
-          </NavLink>
-          <NavLink to="/blogs" activeStyle>
-            Blogs
-          </NavLink>
-          <NavLink to="/sign-up" activeStyle>
-            Sign Up
-          </NavLink>
+          <NavLink to="/voting-info">Voting Info</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
+          <NavLink to="/sign-up">Sign Up</NavLink>
         </NavMenu>
       </Nav>
     </>

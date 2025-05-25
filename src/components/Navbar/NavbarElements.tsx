@@ -1,53 +1,41 @@
+import type { ReactNode } from "react";
 import { FaBars } from "react-icons/fa";
-import { NavLink as Link } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink as RouterLink } from "react-router-dom";
 
-export const Nav = styled.nav`
-  background: #ffb3ff;
-  height: 85px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
-`;
+interface NavProps {
+  children: ReactNode;
+}
 
-export const NavLink = styled(Link)`
-  color: #808080;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #4d4dff;
-  }
-`;
+interface NavLinkProps {
+  to: string;
+  children: ReactNode;
+}
+interface NavMenuProps {
+  children: ReactNode;
+}
+// Nav wrapper
+export const Nav = ({ children }: NavProps) => (
+  <nav className="bg-pink-200 h-[85px] flex justify-between px-[calc((100vw-1000px)/2)] z-[12]">
+    {children}
+  </nav>
+);
 
-export const Bars = styled(FaBars)`
-  display: none;
-  color: #808080;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
+// NavLink
+export const NavLink = ({ to, children }: NavLinkProps) => (
+  <RouterLink
+    to={to}
+    className="text-gray-500 flex items-center no-underline px-4 h-full cursor-pointer [&.active]:text-blue-500"
+  >
+    {children}
+  </RouterLink>
+);
 
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-white-space: nowrap; */
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+// Hamburger icon
+export const Bars = () => (
+  <FaBars className="hidden text-gray-500 md:hidden block absolute top-0 right-0 transform -translate-x-full translate-y-3/4 text-[1.8rem] cursor-pointer" />
+);
+
+// Menu wrapper
+export const NavMenu = ({ children }: NavMenuProps) => (
+  <div className="flex items-center mr-[-24px] hidden md:flex">{children}</div>
+);

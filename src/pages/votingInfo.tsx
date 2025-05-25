@@ -1,5 +1,5 @@
 
-const SignUp = () => {
+const VotingInfo = () => {
     return (
         <div>
             <h1>"Sign Up Successful"</h1>
@@ -7,4 +7,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default VotingInfo;
