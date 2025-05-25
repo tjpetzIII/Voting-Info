@@ -1,11 +1,22 @@
-import { Header } from "./components/Header/Header";
-import { Body } from "./components/Body/Body";
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages";
+import About from "./pages/about";
+import SignUp from "./pages/signup";
+import Contact from "./pages/contact";
+
 function App() {
   return (
-    <>
-      <Header />
-      <Body />
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
 }
 
