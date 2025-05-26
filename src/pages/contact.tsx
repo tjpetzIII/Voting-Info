@@ -1,13 +1,7 @@
-
+import ContactInfo from "../components/Info/ContactInfo";
 
 const Contact = () => {
-    return (
-        <div>
-            <h1>
-                'Mail us on feedback@geeksforgeeks.org'
-            </h1>
-        </div>
-    );
+  return <ContactInfo />;
 };
 
 export default Contact;
