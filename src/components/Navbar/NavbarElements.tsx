@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink as RouterLink } from "react-router-dom";
 import { clsx } from "clsx";
+import React from "react";
 
 interface NavProps {
   children: ReactNode;
@@ -45,6 +46,17 @@ export const Bars = () => (
 );
 
 // Menu wrapper
-export const NavMenu = ({ children }: NavMenuProps) => (
-  <div className="flex items-center mr-[-24px] md:flex">{children}</div>
-);
+export const NavMenu = ({ children }: NavMenuProps) => {
+  const childrenArray = React.Children.toArray(children);
+  const [first, ...rest] = childrenArray;
+
+  return (
+    <div className="w-full flex items-center justify-between px-4">
+      {/* Left-aligned first item (e.g. icon) */}
+      <div className="flex items-center">{first}</div>
+
+      {/* Centered remaining nav items */}
+      <div className="flex gap-4 justify-center flex-1">{rest}</div>
+    </div>
+  );
+};
