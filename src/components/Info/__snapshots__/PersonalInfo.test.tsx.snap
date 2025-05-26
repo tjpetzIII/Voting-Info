@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalInfo matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ml-8"
+  >
+    <img
+      alt="Profile Image"
+      class="w-40 h-40 pl-5"
+      src="/images/personalPicture.png"
+    />
+    <h2
+      class="text-2xl"
+    >
+      Thomas Petz
+    </h2>
+    <nav
+      class="flex items-center gap-2 text-xl mt-2"
+    >
+      <a
+        class="hover:text-blue-main hover:underline transition-colors duration-200"
+        href="https://github.com/tjpetzIII"
+      >
+        GitHub
+      </a>
+      <span
+        class="text-gray-400"
+      >
+        |
+      </span>
+      <a
+        class="hover:text-blue-main hover:underline transition-colors duration-200"
+        href="https://www.linkedin.com/in/tpetz1/"
+      >
+        LinkedIn
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
