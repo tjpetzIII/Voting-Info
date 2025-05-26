@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink as RouterLink } from "react-router-dom";
+import { clsx } from "clsx";
 
 interface NavProps {
   children: ReactNode;
@@ -15,7 +16,7 @@ interface NavMenuProps {
 }
 // Nav wrapper
 export const Nav = ({ children }: NavProps) => (
-  <nav className="bg-pink-200 h-[85px] flex justify-between px-[calc((100vw-1000px)/2)] z-[12]">
+  <nav className="bg-blue-main h-20 flex justify-center mx-auto px-4">
     {children}
   </nav>
 );
@@ -24,7 +25,15 @@ export const Nav = ({ children }: NavProps) => (
 export const NavLink = ({ to, children }: NavLinkProps) => (
   <RouterLink
     to={to}
-    className="text-gray-500 flex items-center no-underline px-4 h-full cursor-pointer [&.active]:text-blue-500"
+    className={({ isActive }) =>
+      clsx(
+        "font-mono text-xl flex items-center px-4 h-full cursor-pointer transition-all duration-200",
+        {
+          "underline underline-offset-4 text-sky-400": isActive,
+          "text-white no-underline": !isActive,
+        }
+      )
+    }
   >
     {children}
   </RouterLink>
@@ -37,5 +46,5 @@ export const Bars = () => (
 
 // Menu wrapper
 export const NavMenu = ({ children }: NavMenuProps) => (
-  <div className="flex items-center mr-[-24px] hidden md:flex">{children}</div>
+  <div className="flex items-center mr-[-24px] md:flex">{children}</div>
 );
