@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar matches the snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="bg-blue-main h-20 flex justify-center mx-auto px-4"
+  >
+    <div
+      class="flex items-center mr-[-24px] md:flex"
+    >
+      <a
+        class="font-mono text-xl flex items-center px-4 h-full cursor-pointer transition-all duration-200 text-white no-underline"
+        data-discover="true"
+        href="/voting-info"
+      >
+        Voting Info
+      </a>
+      <a
+        class="font-mono text-xl flex items-center px-4 h-full cursor-pointer transition-all duration-200 text-white no-underline"
+        data-discover="true"
+        href="/about"
+      >
+        About
+      </a>
+      <a
+        class="font-mono text-xl flex items-center px-4 h-full cursor-pointer transition-all duration-200 text-white no-underline"
+        data-discover="true"
+        href="/contact"
+      >
+        Contact Us
+      </a>
+      <a
+        class="font-mono text-xl flex items-center px-4 h-full cursor-pointer transition-all duration-200 text-white no-underline"
+        data-discover="true"
+        href="/sign-up"
+      >
+        Sign Up
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
